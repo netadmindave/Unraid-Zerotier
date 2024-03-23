@@ -21,4 +21,7 @@ RUN apt-get update \
 VOLUME /var/lib/zerotier-one
 EXPOSE 9993
 
-ENTRYPOINT ["zerotier-one"]
+COPY main.sh /main.sh
+RUN chmod +x main.sh
+
+ENTRYPOINT ["/main.sh"]
